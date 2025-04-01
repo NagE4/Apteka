@@ -16,10 +16,10 @@ public class AudioManager : MonoBehaviour
         sfxSource.PlayOneShot(clip);
     }
 
-    public void OnApproveButtonClicked()
-    {
-        decisionManager.Approve();
-        audioManager.PlaySFX(approveSound); // Play click sound
-    }
+    // public void OnApproveButtonClicked()
+    // {
+    //     decisionManager.Approve();
+    //     audioManager.PlaySFX(approveSound); // Play click sound
+    // }
 }
 

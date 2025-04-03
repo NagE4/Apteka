@@ -2,15 +2,29 @@ using UnityEngine;
 
 public class UIManager : MonoBehaviour
 {
-    public DecisionManager decisionManager;
-
-    public void OnApproveButtonClicked()
+    private void OnEnable()
     {
-        decisionManager.Approve();
+        // Subscribe to the "NewDayStarted" event
+        EventManager.Instance.AddListener("NewDayStarted", OnNewDayStarted);
     }
 
-    public void OnDenyButtonClicked()
+    private void OnDisable()
     {
-        decisionManager.Deny();
+        // Unsubscribe from the "NewDayStarted" event
+        EventManager.Instance.RemoveListener("NewDayStarted", OnNewDayStarted);
+    }
+
+    private void OnNewDayStarted()
+    {
+        Debug.Log("UIManager: New Day Started!");
+
+        // Update the UI to reflect the new day
+        UpdateDayDisplay();
+    }
+
+    private void UpdateDayDisplay()
+    {
+        // Example: Update a text element to show the current day
+        Debug.Log("Updating day display...");
     }
 }

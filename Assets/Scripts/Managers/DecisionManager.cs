@@ -1,10 +1,11 @@
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public class DecisionManager : MonoBehaviour
 {
     public DocumentViewer documentViewer;
-    public Text moneyText;
+    public TextMeshProUGUI moneyText;
     public int money = 0;
 
     private DocumentData currentDocument;
@@ -54,7 +55,26 @@ public class DecisionManager : MonoBehaviour
 
     private void NextDocument()
     {
+        if (documentGenerator == null)
+        {
+            Debug.LogError("DocumentGenerator is not assigned!");
+            return;
+        }
+
+        if (documentViewer == null)
+        {
+            Debug.LogError("DocumentViewer is not assigned!");
+            return;
+        }
+
         currentDocument = documentGenerator.GetRandomDocument();
+
+        if (currentDocument == null)
+        {
+            Debug.LogError("No documents available in DocumentGenerator!");
+            return;
+        }
+
         documentViewer.DisplayDocument(currentDocument);
         UpdateMoneyDisplay();
     }

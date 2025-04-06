@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7a64b10f960a65b4ebd7f75b017640d1, type: 3}
   m_Name: ValidPassport3
   m_EditorClassIdentifier: 
-  name: 
-  idNumber: 
-  issuingCountry: 
-  expirationDate: 
-  isValid: 0
+  name: Maria Garcia
+  idNumber: C56789012
+  issuingCountry: UK
+  expirationDate: 2025-09-20
+  isValid: 1

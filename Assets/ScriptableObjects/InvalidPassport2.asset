@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7a64b10f960a65b4ebd7f75b017640d1, type: 3}
   m_Name: InvalidPassport2
   m_EditorClassIdentifier: 
-  name: 
+  name: Alice Brown
   idNumber: 
-  issuingCountry: 
-  expirationDate: 
+  issuingCountry: Germany
+  expirationDate: 2028-03-10
   isValid: 0
